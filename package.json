@@ -1,0 +1,31 @@
+{
+  "name": "push-to-see",
+  "version": "0.1.0",
+  "description": "HTML5 Card for Wife",
+  "license": "MIT",
+  "repository": {
+    "type": "git"
+  },
+  "scripts": {
+    "install": "sudo npm i -g webpack"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "css-loader": "^0.24.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "gsap": "^1.19.0",
+    "html-webpack-plugin": "^2.22.0",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.9.0",
+    "p2": "^0.7.1",
+    "phaser": "^2.6.2",
+    "pixi": "^0.3.1",
+    "sass-loader": "^4.0.1",
+    "style-loader": "^0.13.1",
+    "webpack": "*"
+  }
+}
