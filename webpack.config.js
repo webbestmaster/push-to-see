@@ -40,9 +40,11 @@ module.exports = {
 
 	watch: NODE_ENV === keys.env.dev,
 
+/*
 	watchOptions: {
 		aggregateTimeout: 100
 	},
+*/
 
 	devtool: NODE_ENV === keys.env.dev ? 'source-map' : null,
 

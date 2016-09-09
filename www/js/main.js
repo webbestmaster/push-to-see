@@ -1,27 +1,24 @@
 var json = require('json/data');
 
-var game = new Phaser.Game(800, 600, Phaser.AUTO, '');
+var game = new Phaser.Game(document.documentElement.clientWidth, document.documentElement.clientHeight, Phaser.AUTO, '');
 
 import BeeWrapper from 'bee-wrapper';
-
 
 var mainState = {
 
     preload: function () {
 
-
     },
 
     create: function () {
 
-        var ff = new BeeWrapper(game, json);
+        new BeeWrapper(game, json);
 
-
+        game.world.setBounds(0, 0, document.documentElement.clientWidth, document.documentElement.clientHeight);
 
     },
 
     update: function () {
-
 
         // console.log('upda!!te');
     }
