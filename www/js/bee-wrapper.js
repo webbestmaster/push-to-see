@@ -1,5 +1,7 @@
 import Bee from 'bee';
 
+var gsap = require('gsap');
+
 export default class BeeWrapper {
 
     constructor(game, data) {
@@ -20,13 +22,20 @@ export default class BeeWrapper {
 
             Array.prototype.forEach.call(string, function (letter, endY) {
 
-                return letter.trim() && bees.push(new Bee(game, endY, endX));
+                return letter.trim() && bees.push(new Bee(game, wrapper, endY, endX));
 
             });
 
         });
 
+    }
 
+    getWidth() {
+        return this._map.width;
+    }
+
+    getHeight() {
+        return this._map.height;
     }
 
 

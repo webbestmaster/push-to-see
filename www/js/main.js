@@ -12,9 +12,15 @@ var mainState = {
 
     create: function () {
 
-        new BeeWrapper(game, json);
 
-        game.world.setBounds(0, 0, document.documentElement.clientWidth, document.documentElement.clientHeight);
+        // game.world.setBounds(0, 0, document.documentElement.clientWidth, document.documentElement.clientHeight);
+
+        var wrapper = new BeeWrapper(game, json);
+
+        // game.world.camera.scale.set(.5);
+
+        // game.world.camera.setPosition(400, 400);
+
 
     },
 
