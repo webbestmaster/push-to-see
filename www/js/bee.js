@@ -43,6 +43,12 @@ export default class Bee {
         graphics.drawRoundedRect(margin, margin, defaultSize - margin * 2, defaultSize - margin * 2, config.round);
         graphics.endFill();
 
+        graphics.beginFill(0x000000);
+        margin *= 2;
+        graphics.drawRoundedRect(margin, margin, defaultSize - margin * 2, defaultSize - margin * 2, config.round);
+        graphics.endFill();
+
+
         // graphics.pivot.x = defaultSize / 2;
         // graphics.pivot.y = defaultSize / 2;
         // graphics.anchor.x = 0.5;
@@ -56,18 +62,21 @@ export default class Bee {
 
         bee.moveToStart();
 
-   }
+    }
 
-    moveToStart () {
+    moveToStart() {
 
         var bee = this,
             graphics = bee.graphics;
 
-        bee.tweens.start = gsap.TweenMax.to(graphics.position, 10, { x: bee.startX, y: bee.startY, ease: gsap.Bounce.easeOut });
+        var lt = new gsap.TimelineMax({onComplete: () => bee.moveToEnd() });
 
-        if (graphics.alpha !== 1) {
-            gsap.TweenMax.to(graphics, 4, {alpha: 1});
-        }
+        bee.tweens.start = lt;
+
+        lt
+            .to(graphics.position, 10, {x: bee.startX, y: bee.startY, ease: gsap.Bounce.easeOut, delay: Math.random() * 3})
+            .to(graphics, 2, {alpha: 1, delay: Math.random() * 2}, 0);
+
 
     }
 
